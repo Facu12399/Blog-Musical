@@ -13,7 +13,7 @@
     grid-template-columns: auto;
     grid-template-rows: 20vh 60vh 20vh;
     text-align: center;
-    background-color: #F5F5DC;
+    background-color: #000;
 }
 
 /* HEADER */
@@ -22,6 +22,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    border-bottom: 15px #778899 solid;
 }
 
 .header #title {
@@ -38,10 +39,10 @@
 
 /* MAIN */
 .main {
-    background-color: #F5F5DC;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 15px #778899 solid;
 }
 
 .div-form {
@@ -77,8 +78,11 @@
 .main .section .login-usuario input {
     outline: none;
     padding-left: 5px;
-    background-color: #000;
-    color: #778899;
+    background-color: #fff;
+}
+
+.main .section .login-usuario label {
+    font-weight: 500;
 }
 
 .main .section .login-usuario button {

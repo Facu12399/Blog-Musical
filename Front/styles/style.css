@@ -75,6 +75,12 @@
     font-size: 14px;
 }
 
+.nav .content-nav .login a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .nav .content-nav .registro {
     display: flex;
     flex-direction: column;
