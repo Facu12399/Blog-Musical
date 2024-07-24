@@ -169,10 +169,15 @@
 
     .grid-container {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr 8fr 1fr;
         text-align: center;
         background-color: #F5F5DC;
+    }
+
+    .nav .content-nav .login {
+        justify-content: center;
+        align-items: center;
     }
 
     .section-main {
