@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Eczar", serif;
+    font-style: normal;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 15vh 15vh 50vh 20vh;
+    text-align: center;
+    background-color: #F5F5DC;
+}
+
+.header, .nav, .main, .footer { 
+    grid-column: 1;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #000;
+}
+
+.header #title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: #778899;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* NAV */
+.nav {
+    background-color: #778899;
+}
+
+.nav .content-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: 100%;
+    width: 100%; 
+    padding: 10px;
+}
+
+.nav .content-nav .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+    width: 200px;
+}
+
+.nav .content-nav .login a {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5%;
+    border: none;
+    box-shadow: 0 0 1px 0 #fff;
+    background-color: #000;
+    text-decoration: none;
+    color: #778899;
+    font-size: 14px;
+}
+
+.nav .content-nav .registro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+    font-size: 14px;
+}
+
+/* MAIN */
+.grid-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    background-color: #778899;
+    height: 100%;
+}
+
+.section-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5DC;
+}
+
+.div-section-main {
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: 2s ease;
+    /* padding: 20px; */
+}
+
+.div-section-main span {
+    font-weight: 500;
+}
+
+.div-section-main img {
+    width: 100%;
+    height: 100%;
+}
+
+.div-section-main:hover {
+    cursor: pointer;
+    width: 100px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #778899;
+}
+
+.content-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width:768px){
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 15vh 15vh 50vh 20vh;
+        text-align: center;
+        background-color: #F5F5DC;
+    }
+
+    .nav .content-nav .login a, .nav .content-nav .registro {
+        font-size: 14px;
+    }
+
+    .nav .content-nav .login a {
+        width: 90px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .div-section-main span {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:480px){
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 8fr 1fr;
+        text-align: center;
+        background-color: #F5F5DC;
+    }
+
+    .section-main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .div-section-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    .div-section-main img {
+        width: 60%;
+        height: auto;
+        opacity: 0; /* Inicialmente oculto */
+        transition: opacity 0.5s ease; /* Agrega una transición a la propiedad opacidad */
+        animation: cambiar-imagen 2s ease forwards;
+    }
+
+    @keyframes cambiar-imagen {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .div-section-main span {
+        width: 50%;
+        height: 20%;
+        opacity: 0; /* Inicialmente oculto */
+        transition: opacity 0.5s ease; /* Agrega una transición a la propiedad opacidad */
+        animation: cambiar-mensaje 2s ease forwards;
+    }
+
+    @keyframes cambiar-mensaje {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .div-section-main {
+        width: auto;
+        flex-grow: initial;
+        object-fit: initial;
+        opacity: 1;
+        transition: none;
+    }
+
+
+    .div-section-main:hover {
+        /* Anula los estilos hover aquí */
+        cursor: default;
+        width: auto;
+        opacity: 1;
+        filter: none;
+    }
+}
+
+
