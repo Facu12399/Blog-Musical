@@ -268,25 +268,30 @@ footer{
 }
 
 @media only screen and (max-width:768px){
-    .left, .right{
+    .left, .right {
         display: none;
     }
 
-    main{
+    main {
         grid-column: 1 / span 3; /*Con esto le decimos que ocupe la columna 1 y se expanda hasta la columna 3*/
     }
 
-    .grid-container{
+    .grid-container {
         grid-template-rows: 1fr auto 1fr;
     }
 }
 
 @media only screen and (max-width:460px){
-    .write-posteo input{
+
+    .grid-container {
+        grid-template-columns: 99%;
+    }
+
+    .write-posteo input {
         width: 100%;
     }
     
-    .write-posteo textarea{
+    .write-posteo textarea {
         width: 300px;
         max-height: 100px;
     }
