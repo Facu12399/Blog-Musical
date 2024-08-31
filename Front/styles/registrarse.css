@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Eczar", serif;
+    font-style: normal;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px 500px 100px;
+    text-align: center;
+    background-color: #000;
+}
+
+/* HEADER */
+.header{
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-bottom: 15px #778899 solid;
+}
+
+.header #title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    color: #778899;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 15px #778899 solid;
+    background-color: #F5F5DC;
+}
+
+.div-form {
+    background-color: #778899;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .section .register-usuario {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 380px;
+    border: 2px solid #000;
+    border-radius: 10%;
+    background-color: #778899;
+} 
+
+.main .section .register-usuario input, 
+.main .section .register-usuario label, 
+.main .section .register button {
+    margin: 5px;
+}
+
+.main .section .register-usuario input {
+    outline: none;
+    padding-left: 5px;
+    background-color: #fff;
+    width: 80%;
+}
+
+.main .section .register-usuario label {
+    font-weight: 500;
+}
+
+.main .section .register-usuario button {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5%;
+    border: none;
+    box-shadow: 0 0 1px 0 #fff;
+    background-color: #000;
+    text-decoration: none;
+    color: #778899;
+    font-size: 14px;
+}
+
+.main .section .register-usuario .item-register-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main .section .register-usuario .item-register-usuario-name {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main .section .register-usuario .item-register-usuario input {
+    width: 82%;
+}
+
+.main .section .register-usuario .item-register-usuario-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main .section .register-usuario .item-register-usuario-date input {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 82%;
+}
+
+
+.main .section .register-usuario .item-register-usuario-date label {
+    width: 82%;
+    text-align: start;
+    font-size: small;
+}
+
+.main .section .register-usuario .item-register-usuario-name input{
+    width: 40%;
+}
+
+.main .section .register-usuario .item-register-usuario-photo input{
+    width: 82%;
+    accent-color: #778899;
+}
+
+.main .section .register-usuario .item-register-usuario .item-register-usuario-g {
+    width: 82%;
+    text-align: start;
+    height: 22px;
+}
+
+.main .section .register-usuario .item-register-usuario .item-register-usuario-g label {
+    font-size: small;
+}
+
+.main .section .register-usuario .item-register-usuario .item-register-usuario-checkbox {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+}
+
+.main .section .register-usuario .item-register-usuario .item-register-usuario-checkbox input {
+    width: 15px;
+    accent-color: #000;
+}
+
+.main .section .register-usuario .item-register-usuario-photo {
+    width: 82%;
+    text-align: start;
+    font-size: small;
+}
+
+.main .section .register-usuario .item-register-usuario-photo input{
+    width: 100%;
+    text-align: center;
+    font-size: small;
+}
+
+.main .section .register-usuario button {
+    margin-top: 15px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #778899;
+}
+
+.content-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}

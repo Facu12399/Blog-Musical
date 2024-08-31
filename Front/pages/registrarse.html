@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/icons8-music-30.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/registrarse.css">
+    <title>Registrarse</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div id="title">
+                <p>Registrarse</p>
+            </div>
+        </header>
+    
+        <main class="main">
+            <section class="section">
+                <form class="register-usuario">
+                    <div class="item-register-usuario-name">
+                        <input type="text" name="user" id="username-email" placeholder="Nombre">
+                        <input type="text" name="user" id="username-email" placeholder="Apellido">
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <input type="text" name="user" id="username-email" placeholder="Correo Electronico">
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <input type="password" name="pass" id="password" placeholder="Contraseña">   
+                    </div>
+
+                    <div class="item-register-usuario-date">
+                        <label for="password">Fecha de nacimiento: </label>
+                        <input type="date" name="" id="" >
+                    </div>
+                    
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-g">
+                            <label for="">Genero:</label>
+                        </div>      
+                        <div class="item-register-usuario-checkbox">
+                            <label for="genero">Masculino</label>
+                            <input type="radio" name="genero" id="">
+                            <label for="genero">Femenino</label>
+                            <input type="radio" name="genero" id="">
+                            <label for="genero">Prefiero no decirlo</label>
+                            <input type="radio" name="genero" id="">
+                        </div>
+                    </div>
+                    
+                    <div class="item-register-usuario-photo">
+                        <label for="perfil">Foto de perfil: </label>
+                        <input type="file" name="photo" id="perfil">   
+                    </div>
+                    
+                    <button id="inicio">Registrarse</button>
+                </form>    
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="content-footer">
+                <h4>© Copyright 2024</h4>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
