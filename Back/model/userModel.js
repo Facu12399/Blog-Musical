@@ -4,13 +4,18 @@ const { SALT_ROUNDS } = require('../config/config')
 const { DataTypes, Op } = require('sequelize')
 
 const userModel = db.define('usuarios', {
+  name: { type: DataTypes.STRING },
+  surname: { type: DataTypes.STRING },
   username: { type: DataTypes.STRING },
+  email: { type: DataTypes.STRING },
   password: { type: DataTypes.STRING },
+  birthdate: { type: DataTypes.STRING },
+  genare: { type: DataTypes.STRING },
   imageName: { type: DataTypes.STRING}
 })
 
 class UserRepository {
-  static async create ({ username, password, imageName }) {
+  static async create ({ name, surname, username, email, password, birthdate, genare, imageName }) {
 
     // Me aseguro que el nombre de usuario no existe
     const existingUser = await userModel.findOne({
@@ -32,8 +37,13 @@ class UserRepository {
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
 
     userModel.create({
+      name,
+      surname,
       username,
+      email,
       password: hashedPassword,
+      birthdate,
+      genare,
       imageName
     })
   }

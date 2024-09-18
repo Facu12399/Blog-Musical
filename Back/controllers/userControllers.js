@@ -29,13 +29,13 @@ const getImageName = (req, res, next) => {
 
 // Registrar usuario
 const register = async (req, res) => {
-  const { username, password, imageName } = req.body
+  const { name, surname, username, email, password, birthdate, genare, imageName } = req.body
 
   try {
-    await UserRepository.create({ username, password, imageName })
+    await UserRepository.create({ name, surname, username, email, password, birthdate, genare, imageName })
     res.json({ message: 'Usuario registrado correctamente', getImageName })
   } catch (error) {
-    res.status(400).send(error.message);
+    res.json({ message:error.message });
   }
 }
 

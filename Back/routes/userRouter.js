@@ -8,17 +8,18 @@ const { validateCreate, validateUpdateUsername, validateUpdatePass, validateUpda
 // configuracion de rutas express // metodos de HTTP
 const router = express.Router()
 
+// Rutas
 router.post('/register', upload.single('imageName'), getImageName, validateCreate, register)
 router.post('/login', login)
 router.post('/logout', logout)
-router.get(accessToken)
-router.get('/', access)
-router.get('/protected', protect)
+router.get('/accessToken', accessToken)
+router.get('/', accessToken, protect, access) // Redirigir a la ruta protegida
+router.get('/protected', accessToken, protect, (req, res) => res.redirect('/')) // Redirigir a la raíz
 router.get('/usuarios', getUsers)
 router.get('/usuarios/:id', getUser)
 router.put('/usuarios/:id', validateUpdateUsername, updateUsername)
 router.put('/usuariosPass/:id', validateUpdatePass, updatePassword)
-router.put('/usuariosImage/:id', upload.single('imageName') , getImageName, validateUpdateImageName, updateImageName)
+router.put('/usuariosImage/:id', upload.single('imageName'), getImageName, validateUpdateImageName, updateImageName)
 router.delete('/usuarios/:id', deleteUser)
 
 module.exports = router

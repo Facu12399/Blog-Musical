@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/icons8-music-30.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icons8-music-30.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/registrarse.css">
     <title>Registrarse</title>
 </head>
@@ -20,48 +20,117 @@
     
         <main class="main">
             <section class="section">
-                <form class="register-usuario">
-                    <div class="item-register-usuario-name">
-                        <input type="text" name="user" id="username-email" placeholder="Nombre">
-                        <input type="text" name="user" id="username-email" placeholder="Apellido">
-                    </div>
+                <form id="registerUsuario">
 
                     <div class="item-register-usuario">
-                        <input type="text" name="user" id="username-email" placeholder="Correo Electronico">
-                    </div>
-
-                    <div class="item-register-usuario">
-                        <input type="password" name="pass" id="password" placeholder="Contraseña">   
-                    </div>
-
-                    <div class="item-register-usuario-date">
-                        <label for="password">Fecha de nacimiento: </label>
-                        <input type="date" name="" id="" >
-                    </div>
-                    
-                    <div class="item-register-usuario">
-                        <div class="item-register-usuario-g">
-                            <label for="">Genero:</label>
-                        </div>      
-                        <div class="item-register-usuario-checkbox">
-                            <label for="genero">Masculino</label>
-                            <input type="radio" name="genero" id="">
-                            <label for="genero">Femenino</label>
-                            <input type="radio" name="genero" id="">
-                            <label for="genero">Prefiero no decirlo</label>
-                            <input type="radio" name="genero" id="">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningNameSurname">
+                            <div id="warning-name-surname">
+                            </div>
                         </div>
+                        <div class="item-register-usuario-name">
+                            <input type="text" name="user" id="name" placeholder="Nombre" required>
+                            <input type="text" name="user" id="surname" placeholder="Apellido" required>
+                        </div>
+                        <div class="item-register-usuario-warning"></div>
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningUsername">
+                            <div id="warning-username">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario">
+                            <input type="text" name="user" id="username" placeholder="Nombre de Usuario" required>
+                        </div>
+                        <div class="item-register-usuario-warning"></div>          
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningEmail">
+                            <div id="warning-email">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario">
+                            <input type="text" name="user" id="email" placeholder="Correo Electronico" required>
+                        </div>
+                        <div class="item-register-usuario-warning"></div>
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningPass">
+                            <div id="warning-password">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario">
+                            <input type="password" name="pass" id="password" placeholder="Contraseña" required> 
+                        </div> 
+                        <div class="item-register-usuario-warning"></div>
+                    </div>
+
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningBirthdate">
+                            <div id="warning-birthdate">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario-date">
+                            <label for="birthdate-f">Fecha de nacimiento: </label>
+                            <input type="date" name="birthdate-f" id="birthdate" required>
+                        </div> 
+                        <div class="item-register-usuario-warning"></div>
                     </div>
                     
-                    <div class="item-register-usuario-photo">
-                        <label for="perfil">Foto de perfil: </label>
-                        <input type="file" name="photo" id="perfil">   
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningGenare">
+                            <div id="warning-genare">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario-genare">
+                            <div class="item-register-usuario-g">
+                                <label for="genero">Genero:</label>
+                            </div>      
+                            <div class="item-register-usuario-checkbox">
+                                <label for="genero">Masculino</label>
+                                <input type="radio" name="genero" id="male" value="Masculino" required>
+                                <label for="genero">Femenino</label>
+                                <input type="radio" name="genero" id="female" value="Femenino" required>
+                                <label for="genero">Prefiero no decirlo</label>
+                                <input type="radio" name="genero" id="notsay" value="Prefiero no decirlo" required>
+                            </div>
+                        </div> 
+                        <div class="item-register-usuario-warning"></div>
                     </div>
                     
-                    <button id="inicio">Registrarse</button>
+                    <div class="item-register-usuario">
+                        <div class="item-register-usuario-warning">
+                            <img src="../img/advertencia.png" alt="" id="warningPhoto">
+                            <div id="warning-photo">
+                            </div>
+                        </div>
+                        <div class="item-register-usuario-photo">
+                            <label for="photo">Foto de perfil (opcional): </label>
+                            <input type="file" name="photo" id="perfil">  
+                        </div>
+                        <div class="item-register-usuario-warning"></div> 
+                    </div>
+                    
+                    <button type="submit">Registrarse</button>
                 </form>    
             </section>
         </main>
+
+        <section class="modal">
+            <div class="modal_container">
+                <img src="../img/icons8-music-30.png" class="modal_img">
+                <h2 class="modal_title">¡Registro exitoso!</h2>
+                <a href="#" id="modal_close">Cerrar Modal</a>
+            </div>
+        </section>
 
         <footer class="footer">
             <div class="content-footer">
@@ -69,6 +138,9 @@
             </div>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/registrarse.js"></script>
 
 </body>
 </html>

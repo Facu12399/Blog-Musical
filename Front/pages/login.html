@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/icons8-music-30.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/icons8-music-30.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/login.css">
     <title>Login</title>
 </head>
@@ -20,13 +20,13 @@
     
         <main class="main">
             <section class="section">
-                <form class="login-usuario">
-                    <label for="username-email">Usuario o Email: </label>
-                    <input type="text" name="user" id="username-email">
+                <form id="login-usuario">
+                    <input type="text" name="user" id="username-email" placeholder="Usuario o Email">
             
-                    <label for="password">Contraseña: </label>
-                    <input type="password" name="pass" id="password">   
+                    <input type="password" name="pass" id="password" placeholder="Contraseña">   
                     
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+
                     <button id="inicio">Iniciar Sesión</button>
                 </form>    
             </section>
@@ -39,6 +39,7 @@
         </footer>
     </div>
 
-    <script src="../js/prueba.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>

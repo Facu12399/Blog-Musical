@@ -58,36 +58,31 @@
     align-items: center;
 }
 
-.main .section .register-usuario {
+.main .section #registerUsuario {
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
     width: 450px;
-    height: 380px;
+    height: 400px;
     border: 2px solid #000;
-    border-radius: 10%;
+    border-radius: 5%;
     background-color: #778899;
 } 
 
-.main .section .register-usuario input, 
-.main .section .register-usuario label, 
+.main .section #registerUsuario input, 
+.main .section #registerUsuario label, 
 .main .section .register button {
     margin: 5px;
 }
 
-.main .section .register-usuario input {
+.main .section #registerUsuario input {
     outline: none;
     padding-left: 5px;
     background-color: #fff;
-    width: 80%;
 }
 
-.main .section .register-usuario label {
-    font-weight: 500;
-}
-
-.main .section .register-usuario button {
+.main .section #registerUsuario button {
     cursor: pointer;
     width: 100px;
     height: 30px;
@@ -100,88 +95,142 @@
     font-size: 14px;
 }
 
-.main .section .register-usuario .item-register-usuario {
+.main .section #registerUsuario .item-register-usuario {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+}
+
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-name {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
 }
 
-.main .section .register-usuario .item-register-usuario-name {
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-name input {
+    margin: 10px;
+}
+
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-warning {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 10%;
 }
 
-.main .section .register-usuario .item-register-usuario input {
-    width: 82%;
+.main .section #registerUsuario .item-register-usuario input {
+    width: 95%;
 }
 
-.main .section .register-usuario .item-register-usuario-date {
+.main .section #registerUsuario .item-register-usuario-date {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin: 0;
 }
 
-.main .section .register-usuario .item-register-usuario-date input {
+.main .section #registerUsuario .item-register-usuario-date input {
     margin-top: 0;
     margin-bottom: 0;
-    width: 82%;
+    width: 95%;
 }
 
 
-.main .section .register-usuario .item-register-usuario-date label {
-    width: 82%;
+.main .section #registerUsuario .item-register-usuario-date label {
+    width: 95%;
     text-align: start;
     font-size: small;
 }
 
-.main .section .register-usuario .item-register-usuario-name input{
-    width: 40%;
-}
-
-.main .section .register-usuario .item-register-usuario-photo input{
+.main .section #registerUsuario .item-register-usuario-photo input{
     width: 82%;
     accent-color: #778899;
 }
 
-.main .section .register-usuario .item-register-usuario .item-register-usuario-g {
-    width: 82%;
-    text-align: start;
-    height: 22px;
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-genare {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    width: 95%;
 }
 
-.main .section .register-usuario .item-register-usuario .item-register-usuario-g label {
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-g {
+    text-align: start;
+    margin-left: 3px;
+}
+
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-g label {
     font-size: small;
 }
 
-.main .section .register-usuario .item-register-usuario .item-register-usuario-checkbox {
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox {
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 32px;
+    width: 100%;
 }
 
-.main .section .register-usuario .item-register-usuario .item-register-usuario-checkbox input {
+.main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox input {
     width: 15px;
     accent-color: #000;
 }
 
-.main .section .register-usuario .item-register-usuario-photo {
-    width: 82%;
+.main .section #registerUsuario .item-register-usuario-photo {
+    width: 95%;
     text-align: start;
     font-size: small;
 }
 
-.main .section .register-usuario .item-register-usuario-photo input{
-    width: 100%;
+.main .section #registerUsuario .item-register-usuario-photo input{
+    width: 95%;
     text-align: center;
     font-size: small;
 }
 
-.main .section .register-usuario button {
+.main .section #registerUsuario button {
     margin-top: 15px;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal_container {
+    background-color: #F5F5DC;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10%;
+}
+
+#modal_close {
+    cursor: pointer;
+    border-radius: 5%;
+    box-shadow: 0 0 1px 0 #fff;
+    background-color: #000;
+    text-decoration: none;
+    color: #778899;
+    font-size: small;
+    padding: 3px;
+}
+
+#modal_close:hover{
+    color: #000;
+    background-color: #778899;
+    border: 1px solid #000;
 }
 
 /* FOOTER */
@@ -195,4 +244,173 @@
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+/* Avisos */
+#mensajesValidacion {
+    color: #fff;
+}
+
+#warning-name-surname {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 51%;
+    top: 15%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+
+#warning-username {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 54.5%;
+    top: 34%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+
+#warning-email {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 54.5%;
+    top: 40.5%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+
+#warning-password {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    left: 34.5%;
+    top: 46%;
+    font-size: small;
+    display: none;
+}
+
+#warning-password ul {
+    padding-left: 15px;
+}
+
+#warning-birthdate {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 54.5%;
+    top: 55%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+
+#warning-genare {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 54.5%;
+    top: 65.5%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+
+#warning-photo {
+    background-color: #fff;
+    color: #e41919;
+    position: absolute;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    right: 54.5%;
+    top: 75.5%;
+    border-radius: 8%;
+    font-size: small;
+    display: none;
+}
+#warningNameSurname, #warningUsername, #warningPass,
+#warningEmail, #warningBirthdate, #warningPhoto, #warningGenare {
+    width: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+@media only screen and (max-width: 425px) {
+
+    .main .section #registerUsuario {
+        width: 90%;
+    }
+
+    .main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+
+    .main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox {
+        font-size: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox label {
+        margin: 2px;
+    }
+
+    .main .section #registerUsuario .item-register-usuario .item-register-usuario-checkbox input {
+        margin: 0;
+    }
 }
