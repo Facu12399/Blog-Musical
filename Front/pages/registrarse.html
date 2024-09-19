@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="../img/icons8-music-30.png" type="image/x-icon">
     <link rel="stylesheet" href="../styles/registrarse.css">
     <title>Registrarse</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body>
     <div class="grid-container">
         <header class="header">
@@ -29,8 +31,8 @@
                             </div>
                         </div>
                         <div class="item-register-usuario-name">
-                            <input type="text" name="user" id="name" placeholder="Nombre" required>
-                            <input type="text" name="user" id="surname" placeholder="Apellido" required>
+                            <input type="text" name="user-name" id="name" placeholder="Nombre" required>
+                            <input type="text" name="user-surname" id="surname" placeholder="Apellido" required>
                         </div>
                         <div class="item-register-usuario-warning"></div>
                     </div>
@@ -42,9 +44,9 @@
                             </div>
                         </div>
                         <div class="item-register-usuario">
-                            <input type="text" name="user" id="username" placeholder="Nombre de Usuario" required>
+                            <input type="text" name="user-username" id="username" placeholder="Nombre de Usuario" required>
                         </div>
-                        <div class="item-register-usuario-warning"></div>          
+                        <div class="item-register-usuario-warning"></div>
                     </div>
 
                     <div class="item-register-usuario">
@@ -54,7 +56,7 @@
                             </div>
                         </div>
                         <div class="item-register-usuario">
-                            <input type="text" name="user" id="email" placeholder="Correo Electronico" required>
+                            <input type="text" name="user-email" id="email" placeholder="Correo Electronico" required>
                         </div>
                         <div class="item-register-usuario-warning"></div>
                     </div>
@@ -112,15 +114,17 @@
                             <div id="warning-photo">
                             </div>
                         </div>
-                        <div class="item-register-usuario-photo">
+                        <!-- <div class="item-register-usuario-photo"></div>
                             <label for="photo">Foto de perfil (opcional): </label>
                             <input type="file" name="photo" id="perfil">  
                         </div>
-                        <div class="item-register-usuario-warning"></div> 
+                        <div class="item-register-usuario-warning"></div> -->
                     </div>
-                    
-                    <button type="submit">Registrarse</button>
-                </form>    
+
+                    <button type='submit'>Registrarse</button>
+                
+                </form>
+
             </section>
         </main>
 
@@ -128,7 +132,7 @@
             <div class="modal_container">
                 <img src="../img/icons8-music-30.png" class="modal_img">
                 <h2 class="modal_title">¡Registro exitoso!</h2>
-                <a href="#" id="modal_close">Cerrar Modal</a>
+                <a href="#" id="modal_close">Ok</a>
             </div>
         </section>
 
@@ -143,4 +147,5 @@
     <script src="../js/registrarse.js"></script>
 
 </body>
+
 </html>

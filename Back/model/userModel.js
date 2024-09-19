@@ -15,24 +15,13 @@ const userModel = db.define('usuarios', {
 })
 
 class UserRepository {
-  static async create ({ name, surname, username, email, password, birthdate, genare, imageName }) {
+  static async create ({ name, surname, username, email, password, birthdate, genare }) {
 
     // Me aseguro que el nombre de usuario no existe
     const existingUser = await userModel.findOne({
       where: { username }
     })
     if (existingUser) throw new Error ('username already exist')
-
-    // Verificar si el nombre ya existe en otro usuario
-    const existingImage = await userModel.findOne({
-      where: {
-        imageName
-      }
-    })
-
-    if (existingImage) {
-      throw new Error('Image already exists')
-    }
 
     const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
 
@@ -44,7 +33,6 @@ class UserRepository {
       password: hashedPassword,
       birthdate,
       genare,
-      imageName
     })
   }
 

@@ -40,6 +40,7 @@
 /* MAIN */
 .main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: 15px #778899 solid;
@@ -193,6 +194,11 @@
 
 .main .section #registerUsuario button {
     margin-top: 15px;
+    cursor: pointer;
+}
+
+#mensajeValidacion{
+    color: #fff;
 }
 
 /* MODAL */
@@ -203,10 +209,9 @@
     right: 0;
     bottom: 0;
     background-color: #111111bd;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 
 .modal_container {

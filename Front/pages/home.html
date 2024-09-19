@@ -14,10 +14,10 @@
     <div class="grid-container">
         <nav class="nav">
             <div class="nav-left">
-                <img id="perfil" src="../img/home/Facu12399.jpg" alt="">
+                <img id="perfil" alt="">
                 <div id="data">
-                    <span id="user-name">Facu12399</span>
-                    <span id="nombre">Facundo Nahuel Maza</span>
+                    <span id="user-name"></span>
+                    <span id="nombre"></span>
                 </div>
             </div>
             <div class="nav-right">
@@ -76,7 +76,7 @@
         <main class="main">
             <h4>Escribe un post...</h4>
             <section class="postear">
-                <img id="perfil-post" src="../img/home/Facu12399.jpg" alt="">
+                <img id="perfil-post" alt="" >
                 <form class="write-posteo">
                     <label for="title">Titulo</label>
                     <input type="text" name="titulo" id="title" placeholder="Ponle titulo a tu post...">
@@ -110,8 +110,31 @@
                     </div>   -->
                 </article>
             </section>
+            <section class="modal">
+                <div class="modalContainer1">
+                    <div class="photo">
+                        <img alt="" id="photoModal">
+                    </div>
+                    <div class="button-photo">
+                        <button id="change">Cambiar foto de perfil</button>
+                        <button id="back">Volver</button>
+                    </div>
+                </div>
+                <div class="modalContainer2">
+                    <div class="insertPhoto">
+                        <img alt="" id="photoModalChange">
+                        <input type="file" name="" id="changePhoto">
+                    </div>
+                    <div class="configPhoto">
+                        <button id="updatePhoto">Actualizar</button>
+                        <button id="cancel">Cancelar</button>
+                    </div>
+                </div>
+            </section>
         </main>
+
         <aside class="right">
+            <!---
             <h4>Sugerencias</h4>
             <div class="people">
                 <div class="data-people">
@@ -143,7 +166,9 @@
                 </div>
                 <button>Seguir</button>
             </div>
+            -->
         </aside>
+
         <nav class="nav-phone">
             <ul id="menu-nav-phone">
                 <li><a href="">
@@ -163,6 +188,9 @@
                 </a></li>
             </ul>
         </nav>
+
+        
+
         <footer class="footer">
             <div class="content-footer">
                 <h4>© Copyright 2024</h4>
@@ -170,6 +198,8 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../js/menu_home.js"></script>
+    <script src="../js/home.js"></script>
 </body>
 </html>

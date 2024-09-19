@@ -1,64 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const register = document.querySelector('#registerUsuario');
 
-    document.querySelector('#registerUsuario').addEventListener('submit', async (e) => {
+    register.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        const name = document.querySelector('#name').value;
+        const surname =  document.querySelector('#surname').value;
+        const username = document.querySelector('#username').value;
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
+        const birthdate = document.querySelector('#birthdate').value;
+        const genare = document.querySelector('input[name="genero"]:checked').value;
+        //const imageName = document.querySelector('#perfil').files[0];
 
         try {
-            const formData = new FormData();
-            formData.append('name', document.querySelector('#name').value);
-            formData.append('surname', document.querySelector('#surname').value);
-            formData.append('username', document.querySelector('#username').value);
-            formData.append('email', document.querySelector('#email').value);
-            formData.append('password', document.querySelector('#password').value);
-            formData.append('birthdate', document.querySelector('#birthdate').value);
-            formData.append('genare', document.querySelector('input[name="genero"]:checked').value);
-            formData.append('imageName', document.querySelector('#perfil').files[0]);
-
-            const response = await axios.post('http://localhost:3000/register', formData);
-            const modal = document.querySelector('.modal');
-            modal.style.display = 'flex';
-
-            // Configurar el cierre del modal
-            const closeModal = document.querySelector('#modal_close');
-            closeModal.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = '../index.html';
+            const response = await axios.post('http://localhost:3000/register', {
+                name: name,
+                surname: surname,
+                username: username,
+                email: email,
+                password: password,
+                birthdate: birthdate,
+                genare: genare
             });
+            const modal = document.querySelector('.modal');
+                // Mostrar el modal después de un registro exitoso
+                console.log('Modal encontrado:', modal);
+                modal.style.display = 'flex';
 
-        } catch (error) {
-            // if (error.response && error.response.status === 422) {
-            //     // Maneja errores de validación
-            //     const errores = error.response.data.errores;
-            //     let mensajesdeError = '<ul>';
-            //     const warningPass = document.querySelector('#warningPass');
-            //     errores.forEach(error => {
-            //         if (error.path === 'password') {
-            //             warningPass.style.display = 'inline';
-            //             mensajesdeError += `<li>${error.msg}</li>`;
-            //         }
-            //     });
-            //     mensajesdeError += '</ul>';
-            //     warningPass.addEventListener('click', () => {
-            //         const showWarningPass = document.querySelector('#warning-password');
-            //         showWarningPass.innerHTML = mensajesdeError;
-            //         showWarningPass.style.display = 'block';
-            //     });
-            // } else {
-            //     console.error("Error en la solicitud:", error.message);
-            // }
-            if (error.response && error.response.status === 422) {
-                // Maneja errores de validación
-                const errores = error.response.data.errores;
-                let mensajesdeError = "<ul>";
-                errores.forEach(error => {
-                    mensajesdeError += `<li>${error.msg}</li>`;
+                // Configurar el cierre del modal
+                const closeModal = document.querySelector('#modal_close');
+                closeModal.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = '../index.html';
                 });
-                mensajesdeError += "</ul>";
-                document.querySelector('#mensajesValidacion').innerHTML = mensajesdeError;
-            } else {
-                console.error("Error en la solicitud", error.message);
-            }
+        } catch (error) {
+            console.error('Error en el registro:', error);
         }
     });
-    
 });

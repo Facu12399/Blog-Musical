@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 const { SECRET_JWT_KEY } = require('../config/config')
 const multer = require('multer')
 const path = require('path')
-const validateCreate = require('../validators/users')
 
 // Configuración de Multer para imagenes
 const storage = multer.diskStorage({
@@ -29,11 +28,25 @@ const getImageName = (req, res, next) => {
 
 // Registrar usuario
 const register = async (req, res) => {
-  const { name, surname, username, email, password, birthdate, genare, imageName } = req.body
+  const { name, surname, username, email, password, birthdate, genare } = req.body
 
   try {
-    await UserRepository.create({ name, surname, username, email, password, birthdate, genare, imageName })
-    res.json({ message: 'Usuario registrado correctamente', getImageName })
+    await UserRepository.create({ name, surname, username, email, password, birthdate, genare })
+    res.json({ message: 'Usuario registrado correctamente' })
+    console.log('Registro exitoso');
+  } catch (error) {
+    res.json({ message:error.message });
+  }
+}
+
+// Registrar usuario
+const registerImage = async (req, res) => {
+  const { imageName } = req.body
+
+  try {
+    await UserRepository.createImage({ imageName })
+    res.json({ message: 'Usuario registrado correctamente' })
+    console.log('Registro exitoso');
   } catch (error) {
     res.json({ message:error.message });
   }
@@ -166,5 +179,5 @@ const deleteUser = async (req, res) => {
   }
 }
 
-module.exports = { upload, getImageName, register, login, logout, accessToken, access, protect, getUsers, 
+module.exports = { upload, getImageName, register, registerImage, login, logout, accessToken, access, protect, getUsers, 
   getUser, updateUsername, updatePassword, updateImageName, deleteUser }

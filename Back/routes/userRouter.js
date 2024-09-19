@@ -9,7 +9,7 @@ const { validateCreate, validateUpdateUsername, validateUpdatePass, validateUpda
 const router = express.Router()
 
 // Rutas
-router.post('/register', upload.single('imageName'), getImageName, validateCreate, register)
+router.post('/register', validateCreate, register)
 router.post('/login', login)
 router.post('/logout', logout)
 router.get('/accessToken', accessToken)
