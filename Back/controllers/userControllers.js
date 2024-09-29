@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const { SECRET_JWT_KEY } = require('../config/config')
 const multer = require('multer')
 const path = require('path')
+const { log } = require('console')
 
 // Configuración de Multer para imagenes
 const storage = multer.diskStorage({
@@ -39,19 +40,6 @@ const register = async (req, res) => {
   }
 }
 
-// Registrar usuario
-const registerImage = async (req, res) => {
-  const { imageName } = req.body
-
-  try {
-    await UserRepository.createImage({ imageName })
-    res.json({ message: 'Usuario registrado correctamente' })
-    console.log('Registro exitoso');
-  } catch (error) {
-    res.json({ message:error.message });
-  }
-}
-
 // Iniciar sesion
 const login = async (req, res) => {
   const { username, password } = req.body
@@ -71,7 +59,7 @@ const login = async (req, res) => {
         sameSite: 'strict', // la cookie solo se puede acceder en el mismo dominio
         maxAge: 1000 * 60 * 60 // la cookie tiene un tiempo de validez de 1 hora
       })
-      .send({ user, token })
+      .send({user, token })
   } catch (error) {
     res.status(401).send(error.message)
   }
@@ -84,31 +72,12 @@ const logout = async (req, res) => {
     .json({ message: 'Logout successful' })
 }
 
-// Acceso con token
-const accessToken = async (req, res, next) => {
-  const token = req.cookies.access_token
-  req.session = { user: null }
-
-  try {
-    const data = jwt.verify(token, SECRET_JWT_KEY)
-    req.session.user = data
-  } catch {}
-
-  next() // seguir a la siguiente ruta o middleware
-}
-
-// Acceso a la ruta
-const access = async (req, res) => {
-  const { user } = req.session
-  res.render('index', user)
-}
-
-// Ir a la ruta protegida
 const protect = async (req, res) => {
-  const { user } = req.session
-  if (!user) return res.status(403).send('Access not authorized')
-  res.render('protected', user) // { _id, username}
-}
+  const user = req.user; // Accede directamente a req.user
+  if (!user) return res.status(403).send('Access not authorized');
+  res.render('protected', { user }); // Pasa el usuario al render
+};
+
 
 // Traer todos los usuarios
 const getUsers = async (req, res) => {
@@ -179,5 +148,5 @@ const deleteUser = async (req, res) => {
   }
 }
 
-module.exports = { upload, getImageName, register, registerImage, login, logout, accessToken, access, protect, getUsers, 
+module.exports = { upload, getImageName, register, login, logout, protect, getUsers, 
   getUser, updateUsername, updatePassword, updateImageName, deleteUser }

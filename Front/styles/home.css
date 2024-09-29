@@ -95,14 +95,32 @@ footer{
     width: 100%;
     display: flex;
     justify-content: end;
-    border-bottom: 1px solid #778899;
 }
 
-.nav-right #desplegue li a{
+.nav-right #desplegue li a {
+    position: relative;
     text-decoration: none;
     color: #000;
     font-size: 14px;
 }
+
+.nav-right #desplegue li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #778899;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.nav-right #desplegue li a:hover::after {
+    transform: scaleX(1);
+}
+
 
 /* MAIN */
 .main {
@@ -247,6 +265,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 10px;
 }
 
@@ -258,6 +277,7 @@ footer{
     border-radius: 15px;
     margin-bottom: 10px;
     background-color: #F5F5DC;
+    width: 90%;
 }
 
 .people img {
@@ -410,6 +430,7 @@ footer{
     align-items: center;
     width: 100%;
     height: 100%;
+    font-size: small;
 }
 
 @media only screen and (max-width:768px){

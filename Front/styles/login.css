@@ -22,7 +22,7 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    border-bottom: 15px #778899 solid;
+    border-bottom: 30px #778899 solid;
 }
 
 .header #title {
@@ -42,7 +42,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 15px #778899 solid;
+    border-top: 50px #778899 solid;
     background-color: #F5F5DC;
 }
 
@@ -110,4 +110,5 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    font-size: small;
 }
